@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b172b">
+<meta name="description" content="Central Digital Survey - Professional land surveying and digital mapping in Trivandrum, Kerala.">
+<title>Central Digital Survey | Precision Meets Excellence</title>
+
+<style>
+:root {
+  --navy:#0b172b;
+  --navy2:#142744;
+  --gold:#c9a45f;
+  --cream:#f6f1e7;
+  --white:#fff;
+  --muted:#aab5c6;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {
+  font-family:Georgia,'Times New Roman',serif;
+  background:#fff;color:#18253a;
+}
+a {text-decoration:none;color:inherit}
+.container {width:min(1150px,90%);margin:auto}
+header {
+  background:var(--navy);
+  color:white;
+  border-bottom:1px solid #9b7c43;
+  position:sticky;top:0;z-index:10;
+}
+.nav {
+  min-height:85px;
+  display:flex;justify-content:space-between;
+  align-items:center;gap:20px;
+}
+.brand {display:flex;align-items:center;gap:12px}
+.brand svg {width:49px;height:49px}
+.brand h2 {font-size:20px;letter-spacing:3px;color:var(--gold)}
+.brand small {display:block;color:#fff;letter-spacing:4px;font-size:10px}
+nav {display:flex;gap:25px;font-size:13px}
+nav a:hover {color:var(--gold)}
+.contact-btn {
+  padding:12px 18px;
+  background:var(--gold);color:var(--navy);
+  font-size:12px;font-weight:bold;
+}
+.hero {
+  background:
+    radial-gradient(circle at 80% 30%,#294361 0,transparent 35%),
+    linear-gradient(120deg,#091426,#142b49);
+  color:white;padding:110px 0 100px;
+  overflow:hidden;position:relative;
+}
+.hero:before {
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),
+  linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:55px 55px;
+}
+.hero-inner {
+  position:relative;display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;gap:40px;
+}
+.eyebrow {
+  color:var(--gold);letter-spacing:5px;
+  font-size:11px;text-transform:uppercase;
+}
+.hero h1 {
+  font-size:clamp(43px,6vw,76px);
+  line-height:1.08;margin:25px 0;
+  font-weight:normal;
+}
+.hero h1 span {color:var(--gold)}
+.hero p {color:#c5cfdd;line-height:1.9;max-width:550px}
+.actions {display:flex;gap:15px;flex-wrap:wrap;margin-top:32px}
+.btn {
+  padding:15px 22px;font-size:12px;
+  letter-spacing:1px;font-weight:bold;
+}
+.gold {background:var(--gold);color:var(--navy)}
+.outline {border:1px solid var(--gold);color:white}
+.compass {
+  width:min(100%,350px);aspect-ratio:1;
+  border:1px solid #c9a45f77;border-radius:50%;
+  display:grid;place-items:center;margin:auto;
+  position:relative;
+}
+.compass:before,.compass:after {
+  content:"";position:absolute;border:1px solid #c9a45f55;
+  border-radius:50%;
+}
+.compass:before {inset:22px}
+.compass:after {inset:55px}
+.compass svg {width:72%;position:relative;z-index:1}
+.compass-label {
+  position:absolute;bottom:-15px;
+  background:var(--gold);color:var(--navy);
+  padding:10px 22px;font-size:11px;letter-spacing:2px;
+}
+.section {padding:95px 0}
+.heading {text-align:center;margin-bottom:50px}
+.heading small {color:#a17e40;letter-spacing:4px;font-size:11px}
+.heading h2 {font-size:clamp(30px,4vw,44px);margin:15px 0;color:var(--navy)}
+.heading p {color:#778294;line-height:1.8}
+.services {background:var(--cream)}
+.grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card {
+  background:white;padding:30px;
+  border:1px solid #e9dfcc;
+  transition:.3s;
+}
+.card:hover {
+  transform:translateY(-7px);
+  box-shadow:0 15px 35px #101f381c;
+  border-color:var(--gold);
+}
+.card .symbol {font-size:31px;color:#ae8746}
+.card h3 {margin:18px 0 10px;color:var(--navy);font-size:19px}
+.card p {color:#788395;font:14px/1.8 Arial,sans-serif}
+.about {
+  background:var(--navy);color:white;
+}
+.about-layout {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
+}
+.about h2 {font-size:42px;font-weight:normal;margin:20px 0}
+.about p {color:#c3ccda;line-height:2;font:15px/2 Arial,sans-serif}
+.about-art {
+  border:1px solid #c9a45f66;
+  padding:40px;text-align:center;
+  background:#142744;border-radius:4px;
+}
+.about-art svg {width:100%;max-width:330px}
+.projects {background:#fff}
+.project {
+  min-height:220px;padding:25px;
+  display:flex;flex-direction:column;
+  justify-content:end;color:white;
+  background:linear-gradient(145deg,#294564,#0b172b);
+  border-bottom:3px solid var(--gold);
+}
+.project:nth-child(2) {
+  background:linear-gradient(145deg,#647b88,#182c44);
+}
+.project:nth-child(3) {
+  background:linear-gradient(145deg,#85714c,#172744);
+}
+.project small {color:var(--gold);letter-spacing:2px}
+.project h3 {font-size:21px;margin-top:10px}
+.note {text-align:center;color:#8791a0;font:12px Arial,sans-serif;margin-top:20px}
+.contact {
+  background:var(--navy);color:white;text-align:center;
+}
+.contact h2 {font-size:42px;font-weight:normal;margin:15px 0}
+.contact p {color:#bdc8d7;line-height:2}
+.contact-details {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;margin:45px 0;
+}
+.detail {border:1px solid #ffffff25;padding:25px;overflow-wrap:anywhere}
+.detail small {display:block;color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+.detail a,.detail strong {font:14px Arial,sans-serif}
+footer {
+  background:#07101e;color:#aab4c2;
+  text-align:center;padding:25px;font:12px Arial,sans-serif;
+}
+footer strong {color:var(--gold)}
+.whatsapp {
+  position:fixed;right:22px;bottom:22px;
+  background:#20bd68;color:white;
+  width:55px;height:55px;border-radius:50%;
+  display:grid;place-items:center;font:26px Arial;
+  box-shadow:0 5px 20px #0004;z-index:20;
+}
+@media(max-width:800px) {
+  .hero-inner,.about-layout {grid-template-columns:1fr}
+  .hero {padding:75px 0}
+  .compass {width:250px;margin:35px auto}
+  .grid {grid-template-columns:repeat(2,1fr)}
+  nav {gap:12px;flex-wrap:wrap;justify-content:center}
+  .nav {padding:15px 0;flex-wrap:wrap}
+}
+@media(max-width:550px) {
+  .grid,.contact-details {grid-template-columns:1fr}
+  nav {width:100%;font-size:12px}
+  .brand h2 {font-size:17px}
+  .hero h1 {font-size:45px}
+  .section {padding:65px 0}
+  .contact h2 {font-size:32px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<a href="#home" class="brand">
+<svg viewBox="0 0 100 100" fill="none">
+<circle cx="50" cy="50" r="43" stroke="#c9a45f" stroke-width="2"/>
+<circle cx="50" cy="50" r="34" stroke="#c9a45f" stroke-dasharray="3 5"/>
+<path d="M50 9L59 44L91 50L59 56L50 91L41 56L9 50L41 44Z" fill="#c9a45f"/>
+<circle cx="50" cy="50" r="7" fill="#0b172b"/>
+</svg>
+<div><h2>CENTRAL</h2><small>DIGITAL SURVEY</small></div>
+</a>
+<nav>
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#services">SERVICES</a>
+<a href="#projects">PROJECTS</a>
+<a href="#contact">CONTACT</a>
+</nav>
+<a class="contact-btn" href="#contact">ENQUIRE NOW ↗</a>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-inner">
+<div>
+<div class="eyebrow">Digital Land Surveying & Mapping</div>
+<h1>Precision in Every <span>Measurement.</span></h1>
+<p>
+Every successful project begins with accurate information.
+Central Digital Survey provides land surveying and digital
+mapping services for property and development requirements.
+</p>
+<div class="actions">
+<a class="btn gold" href="#services">EXPLORE SERVICES ↗</a>
+<a class="btn outline" href="https://wa.me/917736000331">CONTACT US</a>
+</div>
+</div>
+<div class="compass">
+<svg viewBox="0 0 200 200" fill="none">
+<circle cx="100" cy="100" r="88" stroke="#c9a45f"/>
+<path d="M100 12L120 80L188 100L120 120L100 188L80 120L12 100L80 80Z" fill="#c9a45f"/>
+<path d="M100 24L109 91L100 100L91 91Z" fill="#fff"/>
+<path d="M100 176L91 109L100 100L109 109Z" fill="#172744"/>
+<circle cx="100" cy="100" r="12" fill="#0b172b" stroke="#c9a45f"/>
+<text x="100" y="7" fill="#f1d69a" text-anchor="middle" font-size="10">N</text>
+</svg>
+<div class="compass-label">ACCURACY & DIRECTION</div>
+</div>
+</div>
+</section>
+
+<section class="section services" id="services">
+<div class="container">
+<div class="heading">
+<small>OUR EXPERTISE</small>
+<h2>Professional Surveying Services</h2>
+<p>Surveying and mapping services for your land and project requirements.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="symbol">⌖</div><h3>Land Surveying</h3><p>Land measurement and site information for property and development planning.</p></article>
+<article class="card"><div class="symbol">⌁</div><h3>Topographical Surveying</h3><p>Mapping terrain, ground levels, contours and site features.</p></article>
+<article class="card"><div class="symbol">◇</div><h3>Boundary Surveying</h3><p>Survey information to help identify and document property boundaries.</p></article>
+<article class="card"><div class="symbol">▥</div><h3>Building Surveying</h3><p>Measurement and survey information for building and construction projects.</p></article>
+<article class="card"><div class="symbol">⊕</div><h3>Total Station Surveying</h3><p>Instrument-based measurements for detailed site surveying.</p></article>
+<article class="card"><div class="symbol">◎</div><h3>GPS / GNSS Surveying</h3><p>Satellite-based positioning and location data collection.</p></article>
+<article class="card"><div class="symbol">▦</div><h3>Digital Mapping</h3><p>Digital presentation of geographic and survey information.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section about" id="about">
+<div class="container about-layout">
+<div class="about-art">
+<svg viewBox="0 0 300 260" fill="none">
+<circle cx="150" cy="120" r="95" stroke="#c9a45f" stroke-width="2"/>
+<path d="M150 25L170 100L245 120L170 140L150 215L130 140L55 120L130 100Z" fill="#c9a45f"/>
+<circle cx="150" cy="120" r="25" fill="#142744" stroke="#fff"/>
+<path d="M150 95V145M125 120H175" stroke="#fff"/>
+<text x="150" y="15" text-anchor="middle" fill="#f1d69a" font-size="12">NORTH</text>
+</svg>
+</div>
+<div>
+<div class="eyebrow">OUR COMPANY</div>
+<h2>Built Around Accuracy. Guided by Precision.</h2>
+<p>
+Central Digital Survey is a surveying service company based
+in Trivandrum, Kerala, India. We provide land surveying,
+topographical surveying, boundary surveying, building
+surveying and digital mapping services.
+</p>
+<p style="margin-top:18px">
+Our focus is to provide useful survey information and help
+clients make informed decisions about their projects.
+</p>
+</div>
+</div>
+</section>
+
+<section class="section projects" id="projects">
+<div class="container">
+<div class="heading">
+<small>OUR FIELD OF WORK</small>
+<h2>Surveying in Action</h2>
+<p>A place to showcase real company projects and field photographs.</p>
+</div>
+<div class="grid">
+<div class="project"><small>01 / LAND</small><h3>Land & Property Survey</h3></div>
+<div class="project"><small>02 / MAPPING</small><h3>Topographical Mapping</h3></div>
+<div class="project"><small>03 / TECHNOLOGY</small><h3>Digital Surveying</h3></div>
+</div>
+<p class="note">Illustrative categories only. Actual project photographs can be added here.</p>
+</div>
+</section>
+
+<section class="section contact" id="contact">
+<div class="container">
+<div class="eyebrow">START A CONVERSATION</div>
+<h2>Let's Discuss Your Project.</h2>
+<p>Contact Central Digital Survey for your surveying and mapping requirements.</p>
+<div class="contact-details">
+<div class="detail">
+<small>LOCATION</small>
+<strong>Chaithanya Nagar, Karumarakod,<br>Azhikodu, Aruvikkara P.O., TVPM</strong>
+</div>
+<div class="detail">
+<small>PHONE / WHATSAPP</small>
+<a href="tel:+917736000331">+91 77360 00331</a>
+</div>
+<div class="detail">
+<small>EMAIL</small>
+<a href="mailto:centraldigitalsurvey@gmail.com">centraldigitalsurvey@gmail.com</a>
+</div>
+</div>
+<p>Registration No. 2573/2013</p>
+<div class="actions" style="justify-content:center">
+<a class="btn gold" href="https://wa.me/917736000331">SEND AN ENQUIRY ↗</a>
+<a class="btn outline" href="mailto:centraldigitalsurvey@gmail.com">SEND EMAIL</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<strong>CENTRAL DIGITAL SURVEY</strong>
+<p style="margin-top:8px">Precision in Every Measurement.</p>
+<p style="margin-top:8px">© <span id="year">2026</span> Central Digital Survey. All rights reserved.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917736000331" aria-label="WhatsApp">W</a>
+
+</body>
+</html>
